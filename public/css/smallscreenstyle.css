@@ -1,0 +1,105 @@
+@media only screen and (max-width: 1000px) {
+    .menu{
+      display: none;
+    }
+    .content-container{
+      width: 99%;
+    }
+    .top-container{
+      width: 99%;
+    }
+    .content{
+      width: 100%;
+    }
+    .content-body{
+    margin-bottom:40px;
+    }
+    .content-small-container{
+      width: 90%;
+      margin: 0 auto 0 auto;
+    }
+
+    .smallscreenmenu{
+      display: inline-block;
+      background-color: var(--content-container-color);
+      position: fixed;
+      margin: 0px auto 20px 0;
+      bottom: 0px;
+      left: 0px;
+      width: 100%;
+      border-radius: 4px solid;
+      z-index: 99;
+    }
+    .menuitems{
+      display: inline;
+      background-color: var(--content-container-color);
+      width: 33%;
+      float: left;
+      border-right: 1px solid;
+      border-top: 1px solid;
+      text-align: center;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      margin: 0 auto 0 auto;
+      overflow: hidden;
+      color: var(--text-color);
+      border-color: var(--main-a-hover-color);
+    }
+    ul{
+    text-align: left;
+    }
+    .contact-items{
+      width: 100%;
+      height: 100%;
+    }
+}
+
+  @media only screen and (max-width: 850px) {
+    body{
+      width:100%;
+      padding: 0px;
+      margin:10px 0px 0px 0px;
+    }
+   .title{
+     display: none;
+   }
+   .logo{
+     display: block;
+     float: none;
+     margin: 35px;
+   }
+   .profile-image-container{
+     width: 100%;
+
+    display: block;
+   }
+   .profile-image{
+    float: none;
+    margin-left: auto;
+    margin-right: 15px;
+   }
+   p.content-small-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center; 
+    width: 100%;
+   }
+   .content-body{
+    display: inline-block;
+    justify-content: center;
+    flex-direction: row;
+    text-align: center; 
+    width: 100%;
+   }
+   .contact-images{
+    display: inline-block;
+    float: none;
+    padding: 30px 0px 0px 0px;
+    height: 32px;
+    width: 32px;
+   }
+   .cv-items{
+     width:90%
+   }
+  }

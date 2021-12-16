@@ -1,0 +1,231 @@
+:root{
+    --main-bg-color: rgb(0, 227, 169);
+    --main-logo-color: rgb(252, 252, 252);
+    
+    --text-color: rgb(235, 232, 217);
+    --text-title-color: rgb(100, 206, 70);
+    --text-body-title-color: rgb(79, 79, 77);
+    --text-shadow-color: rgb(87, 87, 83);
+
+    --main-a-color: #ffeb5c;
+    --main-a-hover-color: rgb(197, 197, 195);
+   
+    --text-background-color:#4991d0;
+
+    --content-container-color: #53d3cf;
+    --cv-items-text-color: #65dc29;
+    --cv-items-color: rgba(255, 255, 255, 0);
+    --cv-title-color: #ffea00;
+    --cv-body-color: rgb(239, 231, 122);
+
+    --footer-bg-color: rgb(49, 49, 45);
+    --footer-text-color: rgb(235, 232, 217);
+  }
+
+
+body {
+  background-color: var(--main-bg-color);
+	font-family: "Helvetica";
+  max-height: 70%;
+}
+
+p {
+  display: block;
+  font-size: 1.1rem;
+  color: var(--text-color);
+}
+
+a{
+  color: var(--main-a-color);
+}
+
+a:hover{
+  color:var(--main-a-hover-color);
+}
+
+a:visited{
+  color: var(--main-a-color);
+}
+
+.top-container{
+  width: 100%;
+  height: 0px;
+  margin: 0 auto 0 auto;
+}
+
+.logo{
+  float: left;
+  height: 55px;
+  margin: 10px;
+  background-color: var(--main-logo-color);
+  border-radius: 20px;
+  padding: 0px;
+}
+
+.top-container h1 {
+  font-size: 2.8rem;
+  padding: 10px 0px;
+}
+
+.title{
+  margin: auto;
+  display: inline-block;
+  text-shadow: 2px 2px var(--text-title-color);
+  color: var(--text-background-color);
+  
+  text-align: right;
+}
+.mid{
+  margin:10px;
+  width: 500px;
+}
+
+.button{
+  background-color: #65dc29;
+  border: 2px white solid;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: crosshair;
+  border-radius: 20px;
+}
+
+.subTitle{
+  margin: 10px auto;
+  width: 30%;
+  color:var(--text-color);
+  background-color: var(--text-background-color);
+  padding: 3px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  text-align: center;
+  border-radius:5px;
+}
+
+.menu{
+  float: right;
+  margin: 0px auto;
+  width: auto; 
+}
+p.menu-text{
+  display: inline-block;
+  color: var(--text-title-color);
+  font-size: 2rem;
+  padding: 0px;
+  margin: auto;
+  font-weight: bold;
+}
+
+.hamburger{
+  height: 60px;
+  width: 60px;
+}
+
+.chart{
+  height: 90%;
+}
+
+.content-container{
+  width: 99%;
+  min-height: 300px;
+  height: 100%;
+  margin: 0 auto 0 auto;
+  padding: 0 10px 0 10px;
+  background-color: var(--content-container-color);
+  text-align: center; 
+  border-radius: 25px;
+  box-shadow: 0px 8px 16px 0px rgb(255, 255, 255); 
+}
+.content-title{
+  position: relative;
+  top: 20px;
+  left: 10px;
+  margin: 20px;
+  
+}
+
+.content-body{
+  position: relative;
+  top: 0px;
+  margin: auto;
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+.cv-items{
+  display: inline-block;
+  padding: 0px;
+  border: 0px solid;
+  border-radius: 10px;
+  background-color: var(--cv-items-color);
+  color: var(--cv-items-text-color);
+  text-shadow: 3px 3px #f9f585;
+  margin: 5px auto;
+}
+
+.cvTitle{
+  display:inline;
+  background-color: var(--cv-title-color);
+  font-weight: bold;
+  font-size: 1.6rem;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.cvYear{
+  display:inline;
+  background-color: var(--cv-year-color);
+}
+
+.cvBody{
+  display:inline-block;
+  font-size: 1.6rem;
+  background-color: var(--cv-body-color);
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  padding: 20px;
+}
+
+.cvBody a{
+  color: #000;
+}
+.cvBody p{
+  color: var(--text-title-color);
+}
+
+.content-small-container{
+  width: 60%;
+  margin: 0 auto 0 auto;
+}
+
+.contact-images{
+  float: left;
+  padding-right: 10px;
+  height: 32px;
+  width: 32px;
+}
+.contact-items{
+  height: 50px;
+  width: 600px;
+
+  border-top: 0px solid #ffffff;
+}
+  
+div.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0px;
+  text-align: center;
+  z-index: 1;
+  background-color: var(--footer-bg-color);
+  font-size:0.7em;
+  color: var(--footer-text-color);
+  overflow:hidden ;
+}
+
+  

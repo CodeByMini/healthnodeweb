@@ -1,0 +1,21 @@
+:root{
+    --main-bg-color: rgb(48, 53, 51);
+    
+    --text-color: rgb(235, 232, 217);
+
+    --main-a-color: rgb(172, 169, 161);
+    --main-a-hover-color: rgb(197, 197, 195);
+   
+    --text-background-color:rgb(181, 161, 50);
+
+    --content-container-color: rgb(109, 108, 104);
+    --cv-items-color: rgb(155, 154, 153);
+    --cv-title-color: rgb(172, 168, 132);
+    --cv-body-color: rgb(235, 232, 217);
+    --cv-year-color: rgb(118, 123, 130);
+
+    --footer-bg-color: rgb(49, 49, 45);
+    --footer-text-color: rgb(235, 232, 217);
+
+
+  }
