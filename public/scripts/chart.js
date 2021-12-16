@@ -18,210 +18,96 @@ var data = {
   }
 };
 
-let nsParsed = JSON.parse(nightscout)
-let healthParsed = JSON.parse(health)
-let treatParsed = JSON.parse(treatments)
+let cgmobject = JSON.parse(nightscout)
+let bpmobject = JSON.parse(health)
+let carbsobject = JSON.parse(treatments)
 
+var cgmlist = []
+var bpmlist = []
+var carbslist = []
+var boluslist = []
 
-data = nsParsed.map(o => { return {["item"]: {cgm: Math.round(o.sgv/18 * 10) / 10, carbs: 0, bpm: -1,date: o.dateString.replace("T", " ").slice(0,19)}}})
-let data2 = healthParsed.map(o => { return {["item"]: {cgm: -1,bpm: o.value, carbs: 0, date: new Date(o.date * 1000).toLocaleString('sv-SE')}}})
-let data3 = treatParsed.map(o => { return {["item"]: {cgm: -1, bpm: -1, carbs: o.carbs, date: o.created_at.replace("T", " ").slice(0,19)}}})
-data = data.concat(data2);
-data = data.concat(data3);
-
-data.sort(function(a, b) {
-  //console.log(a.item.date)
-  return new Date(a.item.date) - new Date(b.item.date);
-});
-//console.log(data)
-
-var timeline =[]
-var cgm = []
-var bpm = []
-var carbs = []
-
-var i = 1;
-
-var lastbpm = 0;
-var lastcgm = 0;
-//var lastcarbs
-
-data.forEach(function(item){
-  //console.log(item.item.cgm)
-  timeline.push(item.item.date)
-  carbs.push(item.item.carbs)
-  if(item.item.bpm > -1){
-    bpm.push(item.item.bpm)
-    lastbpm = item.item.bpm
-    cgm.push(lastcgm)
-    
-    
-  }
-  if(item.item.cgm > -1){
-    cgm.push(item.item.cgm)
-    lastcgm = item.item.cgm
-    bpm.push(lastbpm)
-    
-  }
-i++;
-})
-
-console.log(timeline)
-console.log(cgm)
-console.log(bpm)
-
-
-let options = {
-  legend: {
-    display: false
-},
-  scales: {
-    xAxes: [{
-        gridLines: {
-            display:false
-        }
-    }],
-    yAxes: [{
-        gridLines: {
-            display:false
-        }   
-    }]
-}
-};
-
-
-data = {
-  labels: timeline,
-  datasets: [
-    {
-      //label: 'BPM',
-      data: bpm,
-      borderColor: '#24329b',
-      type: 'line',
-      
-    },
-    {
-      //label: 'CGM',
-      data: cgm,
-      borderColor: '#3f50d3',
-      type: 'line',
-      
-    },
-    {
-      //label: 'CGM',
-      data: carbs,
-      borderColor: '#3f50d3',
-      //type: 'bar',
-      backgroundColor:'#000000'
-    }
-  ]
-};
-
-const myChart = new Chart(ctx, {
-    type: 'bar',
-    options: options,
-    data: data,
-    }
-);
-
-
-
-
-
-
-
-
-
-/*
-var sortedArray = obj.sort(function(a, b) {
-    return b[1] - a[1];
-  });
-
-var names = [];
-var values = [];
-
-for (let i = 0; i < 4; i++){
-    names.push(sortedArray[i][0])
-    values.push(sortedArray[i][1]*100)
-}
-const config = {
-    
-    options: {
-        responsive: true,
-        interaction: {
-          mode: 'index',
-          intersect: false,
-        },
-        stacked: false,
-        plugins: {
-          title: {
-            display: true,
-            text: 'Chart.js Line Chart - Multi Axis'
-          }
-        },
-        scales: {
-            x:{
-                grid: {
-                    drawOnChartArea: false, // only want the grid lines for one axis to show up
-                },
-            },
-            y: {
-                type: 'linear',
-                display: true,
-                position: 'left',
-                stacked: true,
-                grid: {
-                    drawOnChartArea: false, // only want the grid lines for one axis to show up
-                },
-            },
-            y1: {
-                type: 'linear',
-                display: true,
-                position: 'right',
-                grid: {
-                    drawOnChartArea: false, // only want the grid lines for one axis to show up
-                },
-            },
-        }
-      },
-    };
-
-*/
-/*
-   
-const chart = new Chart(CHART, {
-    type: 'line',
-    options: config.options,
-    data: {
-        labels: ["200","201","202","203","204","205","206","300","301","302"],
-
-    datasets: [
-        {
-            label: 'MMOL',
-            data: ["5.5","5.7","5.4","4.9","4.3","4.2","4.4","4.9","6.5","6.7"],
-            borderColor: '#24329b',
-            backgroundColor: '#3f50d33f',
-            yAxisID: 'y',
-            stack: 'combined',
-            type: 'bar'
-          },
-          {
-            label: 'MMOL',
-            data: ["5.5","5.7","5.4","4.9","4.3","4.2","4.4","4.9","6.5","6.7"],
-            borderColor: '#24329b',
-            backgroundColor: '#3f50d3',
-            yAxisID: 'y',
-            stack: 'combined',
-          },
-    {
-      label: 'BPM',
-      data: ["80","82","81","85","88","89","93","100","103","93"],
-      borderColor: '#5f84f4',
-      backgroundColor: '#3f50d3',
-      yAxisID: 'y1',
-    }
-  ]
-    }
+cgmobject.forEach(o => {
+  cgmlist.push({
+    y: Math.round(o.sgv/18 * 10) / 10, 
+    x: o.dateString.replace("T", " ").slice(0,19)
+  })
 });
 
-*/
+bpmobject.forEach(o => {
+  bpmlist.push({
+    y: o.value, 
+    x: new Date(o.date * 1000).toLocaleString('sv-SE')
+  })
+});
+
+carbsobject.forEach(o => {
+  if(o.insulin > 0){
+    console.log(o)
+    boluslist.push({
+      y: o.insulin*10,
+      r: o.insulin*5,
+      x: o.created_at.replace("T", " ").slice(0,19)
+    })
+  }
+  if(o.carbs > 0){
+    carbslist.push({
+      y: o.carbs, 
+      r: o.carbs/2,
+      x: o.created_at.replace("T", " ").slice(0,19)
+    })
+  }
+});
+console.log(boluslist)
+
+var BPM = {
+  label: 'BPM',
+  borderColor: '#73001f',
+  backgroundColor: '#7dccf400',
+  type: 'line',
+  data: bpmlist
+};
+
+var CGM = {
+  label: 'CGM',
+  borderColor: '#3cb0ea',
+  backgroundColor: '#7dccf400',
+  type: 'line',
+  data: cgmlist
+};
+
+var CARBS = {
+  label: 'Carbs',
+  borderColor: '#004f00',
+  backgroundColor: '#008000',
+  type: 'bubble',
+  data: carbslist
+};
+var INSULIN = {
+  label: 'Insulin',
+  borderColor: 'red',
+  backgroundColor: 'darkred',
+  type: 'bubble',
+  data: boluslist
+};
+
+var chart = new Chart(ctx, {
+  type: 'bar',
+  data: { datasets: [CARBS, INSULIN, CGM, BPM ] },
+  options: {
+    scales: {
+      xAxes: [{
+        type: 'time',
+        gridLines: {
+          display:false
+      }
+      }],
+      yAxes: [{
+        gridLines: {
+          display:false
+      }
+      }]
+    }
+  }
+}); 
+

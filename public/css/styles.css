@@ -1,5 +1,5 @@
 :root{
-    --main-bg-color: rgb(0, 227, 169);
+    --main-bg-color: rgb(0, 121, 227);
     --main-logo-color: rgb(252, 252, 252);
     
     --text-color: rgb(235, 232, 217);
@@ -12,7 +12,7 @@
    
     --text-background-color:#4991d0;
 
-    --content-container-color: #53d3cf;
+    --content-container-color: rgb(108, 220, 237);
     --cv-items-text-color: #65dc29;
     --cv-items-color: rgba(255, 255, 255, 0);
     --cv-title-color: #ffea00;
@@ -20,6 +20,8 @@
 
     --footer-bg-color: rgb(49, 49, 45);
     --footer-text-color: rgb(235, 232, 217);
+    --hooters-text-color: #3cb0ea;
+
   }
 
 
@@ -124,8 +126,23 @@ p.menu-text{
   width: 60px;
 }
 
-.chart{
-  height: 90%;
+.chartbox{
+  height: 70%;
+  width: 100%;
+}
+
+#warning-message { display: none; }
+@media only screen and (orientation:portrait){
+    #wrapper { display:none; }
+    #warning-message { 
+      display:inline-block;
+      width:100%;
+      text-align: center;
+      margin: auto;
+    color:rgb(255, 255, 255)}
+}
+@media only screen and (orientation:landscape){
+    #warning-message { display:none; }
 }
 
 .content-container{
