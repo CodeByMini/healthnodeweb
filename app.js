@@ -24,8 +24,8 @@ app.get('/:device', function(req, res) {
         console.log(req.query.ns)
         
         let nsname = req.query.ns
-        let nsadress = "https://"+nsname+".herokuapp.com/api/v1/entries.json?count=243"
-        let treatAddr = "https://"+nsname+".herokuapp.com/api/v1/treatments.json?count=243"
+        let nsadress = "https://"+nsname+".herokuapp.com/api/v1/entries.json?count=428"
+        let treatAddr = "https://"+nsname+".herokuapp.com/api/v1/treatments.json?count=250"
         //console.log(nsadress)
         let health = "";
         let url = 'http://192.168.1.26:3333/getrecords/'+device;
