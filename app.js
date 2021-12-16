@@ -1,7 +1,6 @@
 require('dotenv').config();
 
 const express = require('express');
-
 const axios = require('axios');
 
 let PORT = 3000
@@ -28,9 +27,8 @@ app.get('/:device', function(req, res) {
         let treatAddr = "https://"+nsname+".herokuapp.com/api/v1/treatments.json?count=250"
         //console.log(nsadress)
         let health = "";
-        let url = 'http://192.168.1.26:3333/getrecords/'+device;
+        let url = process.env(URL)+device;
         //let url = 'http://healthnode-api-service:3333/getrecords/'+device;
-        //console.log(url);
         axios.get(url) 
         .then(response => {
             health = JSON.stringify(response.data);

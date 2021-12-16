@@ -45,7 +45,7 @@ carbsobject.forEach(o => {
   if(o.insulin > 0){
     console.log(o)
     boluslist.push({
-      y: o.insulin*10,
+      y: o.insulin,
       r: o.insulin*5,
       x: o.created_at.replace("T", " ").slice(0,19)
     })
@@ -63,17 +63,19 @@ console.log(boluslist)
 var BPM = {
   label: 'BPM',
   borderColor: '#73001f',
-  backgroundColor: '#7dccf400',
+  backgroundColor: 'rgba(255, 255, 255, 0)',
   type: 'line',
-  data: bpmlist
+  data: bpmlist,
+  pointRadius: 0
 };
 
 var CGM = {
   label: 'CGM',
   borderColor: '#3cb0ea',
-  backgroundColor: '#7dccf400',
+  backgroundColor: 'rgba(255, 255, 255, 0)',
   type: 'line',
-  data: cgmlist
+  data: cgmlist,
+  pointRadius: 0
 };
 
 var CARBS = {

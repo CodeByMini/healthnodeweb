@@ -139,7 +139,7 @@ p.menu-text{
       width:100%;
       text-align: center;
       margin: auto;
-    color:rgb(255, 255, 255)}
+    color:#ffffff}
 }
 @media only screen and (orientation:landscape){
     #warning-message { display:none; }
