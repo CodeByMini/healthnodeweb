@@ -27,7 +27,7 @@ app.get('/:device', function(req, res) {
         let treatAddr = "https://"+nsname+".herokuapp.com/api/v1/treatments.json?count=250"
         //console.log(nsadress)
         let health = "";
-        let url = process.env(URL)+device;
+        let url = process.env.URL+device;
         //let url = 'http://healthnode-api-service:3333/getrecords/'+device;
         axios.get(url) 
         .then(response => {
