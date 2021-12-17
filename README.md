@@ -24,34 +24,6 @@
 </div>
 
 
-
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-  </ol>
-</details>
-<br />
-
-
 ## About The Project
 
 This is a multipart project containing an iPhone app, Back- and Front-end in Node.js and Kubernetes deployment definitions. It also utilize a Atlas MongoDB.
@@ -67,12 +39,12 @@ The repositories used in this project:
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## System Overview
-<img src="images/system-overview.png">
+<img src="images/web.png">
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Built With
-* [React.js](https://reactjs.org/)
+* [Node.js](https://nodejs.dev/)
 
 
 
@@ -81,20 +53,32 @@ The repositories used in this project:
 
 
 ## Getting Started
-
+Install Node.js from https://nodejs.dev/
 
 ### Prerequisites
+Create .env file and populate the following variables:
+>URL= this should point to the healthnode-api-service, if running locally this should be localhost:3333/api
 
 
 
 ### Installation
+Install the packages:
 
+```npm i express```
+
+```npm i ejs```
+
+```npm i axios```
+
+```npm i dotenv```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
 ## Usage
+Run app with:
 
+```node app.js```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
