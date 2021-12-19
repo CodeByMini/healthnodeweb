@@ -1,9 +1,10 @@
 :root{
-    --main-bg-color: rgb(0, 121, 227);
+    --main-bg-color: #cce1ea;
     --main-logo-color: rgb(252, 252, 252);
     
     --text-color: rgb(235, 232, 217);
-    --text-title-color: rgb(100, 206, 70);
+    --text-title-color: rgb(255, 255, 255);
+    --text-title-shadow-color: rgb(0, 0, 0);
     --text-body-title-color: rgb(79, 79, 77);
     --text-shadow-color: rgb(87, 87, 83);
 
@@ -12,7 +13,7 @@
    
     --text-background-color:#4991d0;
 
-    --content-container-color: rgb(108, 220, 237);
+    --content-container-color: #315391;
     --cv-items-text-color: #65dc29;
     --cv-items-color: rgba(255, 255, 255, 0);
     --cv-title-color: #ffea00;
@@ -20,7 +21,7 @@
 
     --footer-bg-color: rgb(49, 49, 45);
     --footer-text-color: rgb(235, 232, 217);
-    --hooters-text-color: #3cb0ea;
+    --hooters-text-color: #2565db;
 
   }
 
@@ -72,8 +73,8 @@ a:visited{
 .title{
   margin: auto;
   display: inline-block;
-  text-shadow: 2px 2px var(--text-title-color);
-  color: var(--text-background-color);
+  text-shadow: 2px 2px var(--text-title-shadow-color);
+  color: var(--text-title-color);
   
   text-align: right;
 }
@@ -139,7 +140,7 @@ p.menu-text{
       width:100%;
       text-align: center;
       margin: auto;
-    color:#ffffff}
+    color:#000000}
 }
 @media only screen and (orientation:landscape){
     #warning-message { display:none; }
@@ -153,8 +154,8 @@ p.menu-text{
   padding: 0 10px 0 10px;
   background-color: var(--content-container-color);
   text-align: center; 
-  border-radius: 25px;
-  box-shadow: 0px 8px 16px 0px rgb(255, 255, 255); 
+  border-radius: 5px;
+  box-shadow: 0px 8px 16px 0px rgb(36, 68, 136); 
 }
 .content-title{
   position: relative;

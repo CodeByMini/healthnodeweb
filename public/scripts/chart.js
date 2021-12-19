@@ -80,15 +80,15 @@ var CGM = {
 
 var CARBS = {
   label: 'Carbs',
-  borderColor: '#004f00',
-  backgroundColor: '#008000',
+  borderColor: '#2565db',
+  backgroundColor: '#8AAAE5',
   type: 'bubble',
   data: carbslist
 };
 var INSULIN = {
   label: 'Insulin',
-  borderColor: 'red',
-  backgroundColor: 'darkred',
+  borderColor: '#a8a2fa',
+  backgroundColor: '#a8a2fa',
   type: 'bubble',
   data: boluslist
 };
@@ -97,14 +97,32 @@ var chart = new Chart(ctx, {
   type: 'bar',
   data: { datasets: [CARBS, INSULIN, CGM, BPM ] },
   options: {
+    legend: {
+      labels: {
+          fontColor: "white",
+          fontSize: 18
+      }
+    },
     scales: {
       xAxes: [{
+        ticks: {
+          fontColor: "#cce1ea",
+          fontSize: 18,
+        },
         type: 'time',
+          time: {
+            unit: 'day'
+        },
         gridLines: {
           display:false
       }
       }],
       yAxes: [{
+        ticks: {
+          fontColor: "#cce1ea",
+          fontSize: 18,
+        
+        },
         gridLines: {
           display:false
       }
